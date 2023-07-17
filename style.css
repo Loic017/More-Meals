@@ -7,9 +7,9 @@
 body {
     background: #febd2e;
     font-family: Poppins;
-    /* background-image: url("img/back2.svg");
+    background-image: url("img/back2.svg");
     background-repeat: no-repeat;
-    background-size: 1920px 1080px; */
+    background-size: cover;
 }
 
 .container {
