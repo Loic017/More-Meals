@@ -9,10 +9,14 @@ Displays meal name, ingredients and instructions.
 - Random Meal Ideas
 - View ingredients and instructions for each meal
 
-<img width="1280" alt="image" src="https://github.com/Loic017/More-Meals/assets/105462797/b50eec51-c6aa-4501-b52f-a78a4c6b2db9">
+<img width="1280" alt="image" src="https://github.com/Loic017/More-Meals/assets/105462797/70e351a7-4539-4116-9477-58663469b05a">
 
-<img width="1280" alt="image" src="https://github.com/Loic017/More-Meals/assets/105462797/31ae21d5-37ed-4845-afe1-1c957d09fc49">
+
+<img width="1280" alt="image" src="https://github.com/Loic017/More-Meals/assets/105462797/283161f0-c2c6-4e42-9498-eedfe827d5cc">
+
 
 # Original Mockup
+Made with Figma
 
-<img width="881" alt="image" src="https://github.com/Loic017/More-Meals/assets/105462797/32b0b28c-15ee-4200-be29-da11b114801d">
+<img width="880" alt="image" src="https://github.com/Loic017/More-Meals/assets/105462797/06284b45-cf6e-43ce-8385-8e266801aa1f">
+
