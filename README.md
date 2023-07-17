@@ -6,9 +6,11 @@ Displays meal name, ingredients and instructions.
 # Features:
 - Search by ingredient
 - Search by meal name
-- Meal idea randomiser
+- Random Meal Ideas
+- View ingredients and instructions for each meal
 
-# Hope To Add:
-- Save meals
-- View by categories
-- Add recipes 
+<img width="1280" alt="image" src="https://github.com/Loic017/More-Meals/assets/105462797/b50eec51-c6aa-4501-b52f-a78a4c6b2db9">
+
+<img width="1280" alt="image" src="https://github.com/Loic017/More-Meals/assets/105462797/31ae21d5-37ed-4845-afe1-1c957d09fc49">
+
+# Original Mockup
