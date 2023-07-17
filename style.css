@@ -200,7 +200,8 @@ button {
 }
 
 .placeholder h2 {
-    font-size: 24px;
+    font-size: 20px;
+    word-wrap: break-word;
     font-weight: 400;
     color: #292d32;
 }
@@ -266,6 +267,9 @@ button {
 .trending-placeholder h2 {
     /* grid-area: name; */
     align-self: center;
+    font-size: 20px;
+    text-overflow: clip;
+    text-align: center;
 }
 
 .trending-placeholder a {
@@ -306,4 +310,47 @@ button {
 
 .view-trending:hover {
     transform: scale(1.1);
+}
+
+.pop-up-recipe {
+    z-index: 2;
+    background-color: #fff;
+    width: 97%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    transition: all 0.5s;
+}
+
+.recipe-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 90%;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.recipe-content img {
+    max-height: 300px;
+    width: 500px;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 20px;
+    overflow: none;
+}
+
+.recipe-content h2 {
+    text-align: center;
+}
+
+.recipe-content p {
+    text-align: center;
+}
+
+.pop-up-close {
+    display: none;
 }

@@ -104,17 +104,22 @@
             <div class="middle-panel">
                 <div class="search-bars">
                     <div class="meal-search" id="meal-search">
-                        <input type="text" placeholder="Search for a meal..." />
-                    </div>
-                    <div class="ingre-search" id="ingre-search">
                         <input
+                            id="meal-search"
+                            type="text"
+                            placeholder="Search for a meal..."
+                        />
+                    </div>
+                    <div class="ingre-search">
+                        <input
+                            id="ingre-search"
                             type="text"
                             placeholder="Search for an ingrediant..."
                         />
                     </div>
-                    <button class="search">Search</button>
+                    <button class="search" id="search">Search</button>
                 </div>
-                <div class="recently-saved">
+                <!-- <div class="recently-saved">
                     <h1 class="recentlyh1">Recently Saved</h1>
                     <div class="recently-content">
                         <div class="placeholder">
@@ -138,6 +143,10 @@
                             <a href="" class="view">View Recipe</a>
                         </div>
                     </div>
+                </div> -->
+                <div class="recently-saved">
+                    <h1 class="recentlyh1">Results</h1>
+                    <div class="recently-content" id="search-content"></div>
                 </div>
                 <div class="trending">
                     <div class="trending-container">
@@ -145,23 +154,43 @@
                         <div class="trending-content">
                             <div class="trending-placeholder">
                                 <!-- <img src="img/Rectangle 10.png" alt="" /> -->
-                                <h2>Meal Name</h2>
-                                <a href="" class="view-trending">View Recipe</a>
+                                <h2 id="meal-name1">Meal Name</h2>
+                                <button class="view-trending" id="randmeal1">
+                                    View Recipe
+                                </button>
                             </div>
                             <div class="trending-placeholder">
                                 <!-- <img src="img/Rectangle 10.png" alt="" /> -->
-                                <h2>Meal Name</h2>
-                                <a href="" class="view-trending">View Recipe</a>
+                                <h2 id="meal-name2">Meal Name</h2>
+                                <button class="view-trending" id="randmeal2">
+                                    View Recipe
+                                </button>
                             </div>
                             <div class="trending-placeholder">
                                 <!-- <img src="img/Rectangle 10.png" alt="" /> -->
-                                <h2>Meal Name</h2>
-                                <a href="" class="view-trending">View Recipe</a>
+                                <h2 id="meal-name3">Meal Name</h2>
+                                <button class="view-trending" id="randmeal3">
+                                    View Recipe
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div id="popUp" class="pop-up-recipe pop-up-close">
+            <button id="close" class="close">X</button>
+            <div class="recipe-content">
+                <img id="meal-img1" src="img/Rectangle 10.png" alt="" />
+                <h2 id="mealname-pop">Meal Name</h2>
+                <h2>Ingredients</h2>
+                <p id="ingredients-pop"></p>
+                <h2>Recipe</h2>
+                <p id="recipe"></p>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
     </body>
 </html>
