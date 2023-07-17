@@ -304,7 +304,7 @@ searchMealName.addEventListener("click", () => {
                 <button id="element-result-${i}" class="view-recipe-result">
                     View Recipe
                 </button>
-            </div>;`;
+            </div>`;
             }
 
             const buttonResult = document.getElementById("element-result-0");
