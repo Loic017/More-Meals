@@ -107,6 +107,8 @@ const filterIngredient =
 
 const searchContent = document.getElementById("search-content");
 
+let strMealList = [];
+
 const searchBtn = document.getElementById("search");
 searchBtn.addEventListener("click", () => {
     const ingreSearchField = document.getElementById("ingre-search");
@@ -114,17 +116,334 @@ searchBtn.addEventListener("click", () => {
         .then((response) => response.json())
         .then((data) => {
             searchContent.innerHTML = "";
+
+            if (data.meals === null) {
+                document.getElementById("resultsquestion").innerHTML =
+                    "No Results Found";
+                return;
+            }
             console.log("hello");
             for (let i = 0; i < 4; i++) {
+                strMealList = [...strMealList, data.meals[i].strMeal];
                 searchContent.innerHTML += `
-                <div class="placeholder">
-                <img src="img/Rectangle 10.png" alt="" />
-                <h2>${data.meals[i].strMeal}</h2>
-                <a href="" class="view">
+                <div class="placeholder" id="${i}">
+                <img src="${data.meals[i].strMealThumb}" alt="" />
+                <h2 id="">${data.meals[i].strMeal}</h2>
+                <button id="element-result-${i}" class="view-recipe-result">
                     View Recipe
-                </a>
+                </button>
             </div>;`;
             }
+
+            const buttonResult = document.getElementById("element-result-0");
+            let buttonResultData;
+            buttonResult.addEventListener("click", (event) => {
+                console.log(event.target.parentElement.id);
+                fetch(
+                    "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+                        strMealList[event.target.parentElement.id]
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        buttonResultData = data;
+                    })
+                    .catch((error) => console.log("hi"));
+                // ----------------
+
+                document.getElementById("mealname-pop").innerText =
+                    buttonResultData.meals[0].strMeal;
+                document.getElementById("meal-img1").src =
+                    buttonResultData.meals[0].strMealThumb;
+                document.getElementById("recipe").innerText =
+                    buttonResultData.meals[0].strInstructions;
+                popUp.classList.remove("pop-up-close");
+
+                const ingredients = [];
+                for (let i = 1; i <= 20; i++) {
+                    const ingredient =
+                        buttonResultData.meals[0][`strIngredient${i}`];
+                    const measure = buttonResultData.meals[0][`strMeasure${i}`];
+                    if (ingredient && measure) {
+                        ingredients.push(`${measure} ${ingredient}`);
+                    }
+                }
+                document.getElementById("ingredients-pop").innerText =
+                    ingredients.join("\n");
+            });
+            const buttonResult2 = document.getElementById("element-result-1");
+            buttonResult2.addEventListener("click", (event) => {
+                console.log(event.target.parentElement.id);
+                fetch(
+                    "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+                        strMealList[event.target.parentElement.id]
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        buttonResultData = data;
+                    })
+                    .catch((error) => console.log("hi"));
+                // ----------------
+
+                document.getElementById("mealname-pop").innerText =
+                    buttonResultData.meals[0].strMeal;
+                document.getElementById("meal-img1").src =
+                    buttonResultData.meals[0].strMealThumb;
+                document.getElementById("recipe").innerText =
+                    buttonResultData.meals[0].strInstructions;
+                popUp.classList.remove("pop-up-close");
+
+                const ingredients = [];
+                for (let i = 1; i <= 20; i++) {
+                    const ingredient =
+                        buttonResultData.meals[0][`strIngredient${i}`];
+                    const measure = buttonResultData.meals[0][`strMeasure${i}`];
+                    if (ingredient && measure) {
+                        ingredients.push(`${measure} ${ingredient}`);
+                    }
+                }
+                document.getElementById("ingredients-pop").innerText =
+                    ingredients.join("\n");
+            });
+            const buttonResult3 = document.getElementById("element-result-2");
+            buttonResult3.addEventListener("click", (event) => {
+                console.log(event.target.parentElement.id);
+                fetch(
+                    "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+                        strMealList[event.target.parentElement.id]
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        buttonResultData = data;
+                    })
+                    .catch((error) => console.log("hi"));
+                // ----------------
+
+                document.getElementById("mealname-pop").innerText =
+                    buttonResultData.meals[0].strMeal;
+                document.getElementById("meal-img1").src =
+                    buttonResultData.meals[0].strMealThumb;
+                document.getElementById("recipe").innerText =
+                    buttonResultData.meals[0].strInstructions;
+                popUp.classList.remove("pop-up-close");
+
+                const ingredients = [];
+                for (let i = 1; i <= 20; i++) {
+                    const ingredient =
+                        buttonResultData.meals[0][`strIngredient${i}`];
+                    const measure = buttonResultData.meals[0][`strMeasure${i}`];
+                    if (ingredient && measure) {
+                        ingredients.push(`${measure} ${ingredient}`);
+                    }
+                }
+                document.getElementById("ingredients-pop").innerText =
+                    ingredients.join("\n");
+            });
+            const buttonResult4 = document.getElementById("element-result-3");
+            buttonResult4.addEventListener("click", (event) => {
+                console.log(event.target.parentElement.id);
+                fetch(
+                    "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+                        strMealList[event.target.parentElement.id]
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        buttonResultData = data;
+                    })
+                    .catch((error) => console.log("hi"));
+                // ----------------
+
+                document.getElementById("mealname-pop").innerText =
+                    buttonResultData.meals[0].strMeal;
+                document.getElementById("meal-img1").src =
+                    buttonResultData.meals[0].strMealThumb;
+                document.getElementById("recipe").innerText =
+                    buttonResultData.meals[0].strInstructions;
+                popUp.classList.remove("pop-up-close");
+
+                const ingredients = [];
+                for (let i = 1; i <= 20; i++) {
+                    const ingredient =
+                        buttonResultData.meals[0][`strIngredient${i}`];
+                    const measure = buttonResultData.meals[0][`strMeasure${i}`];
+                    if (ingredient && measure) {
+                        ingredients.push(`${measure} ${ingredient}`);
+                    }
+                }
+                document.getElementById("ingredients-pop").innerText =
+                    ingredients.join("\n");
+            });
+        })
+        .catch((error) => console.log(error));
+});
+
+/// -------------------
+const searchMealName = document.getElementById("search2");
+searchMealName.addEventListener("click", () => {
+    const mealSearchField = document.getElementById("meal-search-field");
+    fetch(
+        "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+            mealSearchField.value
+    )
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            searchContent.innerHTML = "";
+
+            if (data.meals === null) {
+                document.getElementById("resultsquestion").innerHTML =
+                    "No Results Found";
+                return;
+            }
+            console.log("hello");
+            for (let i = 0; i < 4; i++) {
+                strMealList = [...strMealList, data.meals[i].strMeal];
+                searchContent.innerHTML += `
+                <div class="placeholder" id="${i}">
+                <img src="${data.meals[i].strMealThumb}" alt="" />
+                <h2 id="">${data.meals[i].strMeal}</h2>
+                <button id="element-result-${i}" class="view-recipe-result">
+                    View Recipe
+                </button>
+            </div>;`;
+            }
+
+            const buttonResult = document.getElementById("element-result-0");
+            let buttonResultData;
+            buttonResult.addEventListener("click", (event) => {
+                console.log(event.target.parentElement.id);
+                fetch(
+                    "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+                        strMealList[event.target.parentElement.id]
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        buttonResultData = data;
+                    })
+                    .catch((error) => console.log("hi"));
+                // ----------------
+
+                document.getElementById("mealname-pop").innerText =
+                    buttonResultData.meals[0].strMeal;
+                document.getElementById("meal-img1").src =
+                    buttonResultData.meals[0].strMealThumb;
+                document.getElementById("recipe").innerText =
+                    buttonResultData.meals[0].strInstructions;
+                popUp.classList.remove("pop-up-close");
+
+                const ingredients = [];
+                for (let i = 1; i <= 20; i++) {
+                    const ingredient =
+                        buttonResultData.meals[0][`strIngredient${i}`];
+                    const measure = buttonResultData.meals[0][`strMeasure${i}`];
+                    if (ingredient && measure) {
+                        ingredients.push(`${measure} ${ingredient}`);
+                    }
+                }
+                document.getElementById("ingredients-pop").innerText =
+                    ingredients.join("\n");
+            });
+            const buttonResult2 = document.getElementById("element-result-1");
+            buttonResult2.addEventListener("click", (event) => {
+                console.log(event.target.parentElement.id);
+                fetch(
+                    "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+                        strMealList[event.target.parentElement.id]
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        buttonResultData = data;
+                    })
+                    .catch((error) => console.log("hi"));
+                // ----------------
+
+                document.getElementById("mealname-pop").innerText =
+                    buttonResultData.meals[0].strMeal;
+                document.getElementById("meal-img1").src =
+                    buttonResultData.meals[0].strMealThumb;
+                document.getElementById("recipe").innerText =
+                    buttonResultData.meals[0].strInstructions;
+                popUp.classList.remove("pop-up-close");
+
+                const ingredients = [];
+                for (let i = 1; i <= 20; i++) {
+                    const ingredient =
+                        buttonResultData.meals[0][`strIngredient${i}`];
+                    const measure = buttonResultData.meals[0][`strMeasure${i}`];
+                    if (ingredient && measure) {
+                        ingredients.push(`${measure} ${ingredient}`);
+                    }
+                }
+                document.getElementById("ingredients-pop").innerText =
+                    ingredients.join("\n");
+            });
+            const buttonResult3 = document.getElementById("element-result-2");
+            buttonResult3.addEventListener("click", (event) => {
+                console.log(event.target.parentElement.id);
+                fetch(
+                    "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+                        strMealList[event.target.parentElement.id]
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        buttonResultData = data;
+                    })
+                    .catch((error) => console.log("hi"));
+                // ----------------
+
+                document.getElementById("mealname-pop").innerText =
+                    buttonResultData.meals[0].strMeal;
+                document.getElementById("meal-img1").src =
+                    buttonResultData.meals[0].strMealThumb;
+                document.getElementById("recipe").innerText =
+                    buttonResultData.meals[0].strInstructions;
+                popUp.classList.remove("pop-up-close");
+
+                const ingredients = [];
+                for (let i = 1; i <= 20; i++) {
+                    const ingredient =
+                        buttonResultData.meals[0][`strIngredient${i}`];
+                    const measure = buttonResultData.meals[0][`strMeasure${i}`];
+                    if (ingredient && measure) {
+                        ingredients.push(`${measure} ${ingredient}`);
+                    }
+                }
+                document.getElementById("ingredients-pop").innerText =
+                    ingredients.join("\n");
+            });
+            const buttonResult4 = document.getElementById("element-result-3");
+            buttonResult4.addEventListener("click", (event) => {
+                console.log(event.target.parentElement.id);
+                fetch(
+                    "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+                        strMealList[event.target.parentElement.id]
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        buttonResultData = data;
+                    })
+                    .catch((error) => console.log("hi"));
+                // ----------------
+
+                document.getElementById("mealname-pop").innerText =
+                    buttonResultData.meals[0].strMeal;
+                document.getElementById("meal-img1").src =
+                    buttonResultData.meals[0].strMealThumb;
+                document.getElementById("recipe").innerText =
+                    buttonResultData.meals[0].strInstructions;
+                popUp.classList.remove("pop-up-close");
+
+                const ingredients = [];
+                for (let i = 1; i <= 20; i++) {
+                    const ingredient =
+                        buttonResultData.meals[0][`strIngredient${i}`];
+                    const measure = buttonResultData.meals[0][`strMeasure${i}`];
+                    if (ingredient && measure) {
+                        ingredients.push(`${measure} ${ingredient}`);
+                    }
+                }
+                document.getElementById("ingredients-pop").innerText =
+                    ingredients.join("\n");
+            });
         })
         .catch((error) => console.log(error));
 });
