@@ -1,5 +1,5 @@
 # More-Meals
-A recipe finder using HTML, CSS & Vanilla JS with the ![TheMealDB](https://www.themealdb.com/).
+A recipe finder using HTML, CSS & Vanilla JS with TheMealDB API
 
 Displays meal name, ingredients and instructions.
 
