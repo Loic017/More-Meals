@@ -25,7 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-left: 80px;
-    margin-top: 125px;
+    margin-top: 90px;
 }
 
 .logo {
@@ -102,8 +102,8 @@ body {
 }
 
 .middle-panel {
-    width: 1430px;
-    height: 970px;
+    width: 1250px;
+    height: 850px;
     border-radius: 50px;
     background: #e6dbcc;
     padding: 35px 40px;
@@ -156,12 +156,13 @@ body {
 .trending-container {
     background-color: #febd2e;
     /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
-    width: 298px;
-    height: 850px;
+    width: 250px;
+    height: 200px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 120px;
 }
 
 .trending-container h1 {
@@ -238,7 +239,7 @@ button {
     background-color: #fff;
     border-radius: 40px;
     padding: 10px;
-    width: 350px;
+    width: 300px;
     height: 200px;
     display: flex;
     gap: 20px;
@@ -280,7 +281,7 @@ button {
     margin-top: 70px;
     background-color: #febd2e;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    width: 298px;
+    width: 250px;
     height: 850px;
     border-radius: 20px;
     display: flex;
@@ -388,7 +389,7 @@ button {
     padding: 10px 40px;
     color: #292d32;
     font-weight: 500;
-    width: 200px;
+    width: 250px;
     height: 55px;
     border: 3px solid #292d32;
     user-select: none;
@@ -398,4 +399,9 @@ button {
 
 .recently-saved button:hover {
     transform: scale(1.03);
+}
+
+.search-bars button {
+    padding: 0 15px;
+    font-size: 16px;
 }
